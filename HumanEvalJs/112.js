@@ -14,7 +14,7 @@
  * @param {string} c
  * @returns {[string, boolean]}
  */
-function reverse_delete(s, c) {
+function reverseDelete(s, c) {
   //// BEGIN - CANONICAL SOLUTION
   const filtered = s.split('').filter(char => !c.includes(char)).join('');
   const isPal = filtered === filtered.split('').reverse().join('');
@@ -22,7 +22,13 @@ function reverse_delete(s, c) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
   assert.deepStrictEqual(candidate("abcde", "ae"), ['bcd', false]);
   assert.deepStrictEqual(candidate("abcdef", "b"), ['acdef', false]);
@@ -36,4 +42,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(reverse_delete);
+check(reverseDelete);

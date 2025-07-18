@@ -33,7 +33,6 @@
  *     * 1 <= capacity <= 10
  */
 
-//// BEGIN - CANONICAL SOLUTION
 /**
  * Calculate the total number of times buckets need to be lowered to empty all wells.
  *
@@ -42,6 +41,7 @@
  * @returns {number} The number of times buckets are lowered.
  */
 function maxFill(grid, capacity) {
+//// BEGIN - CANONICAL SOLUTION
     return grid.reduce(
         (total, row) => total + Math.ceil(row.reduce((sum, v) => sum + v, 0) / capacity),
         0
@@ -49,21 +49,24 @@ function maxFill(grid, capacity) {
 }
 
 //// BEGIN - TEST
-function assert(condition, message) {
-    if (!condition) throw new Error(message);
-}
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
 
 function check(candidate) {
     // Check some simple cases
-    assert(true, "This prints if this assert fails 1 (good for debugging!)");
-    assert(candidate([[0,0,1,0], [0,1,0,0], [1,1,1,1]], 1) === 6, "Error");
-    assert(candidate([[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]], 2) === 5, "Error");
-    assert(candidate([[0,0,0], [0,0,0]], 5) === 0, "Error");
+    assert.strictEqual(true, true, "This prints if this assert fails 1 (good for debugging!)");
+    assert.strictEqual(candidate([[0,0,1,0], [0,1,0,0], [1,1,1,1]], 1), 6, "Error");
+    assert.strictEqual(candidate([[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]], 2), 5, "Error");
+    assert.strictEqual(candidate([[0,0,0], [0,0,0]], 5), 0, "Error");
 
     // Check some edge cases that are easy to work out by hand.
-    assert(true, "This prints if this assert fails 2 (also good for debugging!)");
-    assert(candidate([[1,1,1,1], [1,1,1,1]], 2) === 4, "Error");
-    assert(candidate([[1,1,1,1], [1,1,1,1]], 9) === 2, "Error");
+    assert.strictEqual(true, true, "This prints if this assert fails 2 (also good for debugging!)");
+    assert.strictEqual(candidate([[1,1,1,1], [1,1,1,1]], 2), 4, "Error");
+    assert.strictEqual(candidate([[1,1,1,1], [1,1,1,1]], 9), 2, "Error");
 }
 
 //// BEGIN - CHECK

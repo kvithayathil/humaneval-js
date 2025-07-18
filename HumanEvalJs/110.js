@@ -16,8 +16,8 @@
  * @returns {string} "YES" if possible else "NO"
  */
 
-//// BEGIN - CANONICAL SOLUTION
 function exchange(lst1, lst2) {
+//// BEGIN - CANONICAL SOLUTION
     let odd = 0;
     let even = 0;
     for (const i of lst1) {
@@ -37,7 +37,13 @@ function exchange(lst1, lst2) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate([1, 2, 3, 4], [1, 2, 3, 4]), "YES");

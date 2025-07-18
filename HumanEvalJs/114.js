@@ -7,13 +7,13 @@
  *   minSubArraySum([-1, -2, -3]) == -6
  */
 
-//// BEGIN - CANONICAL SOLUTION
 /**
  * Finds the minimum subarray sum.
  * @param {number[]} nums - Array of integers.
  * @returns {number} The minimum subarray sum.
  */
 function minSubArraySum(nums) {
+//// BEGIN - CANONICAL SOLUTION
     let max_sum = 0;
     let s = 0;
     for (const num of nums) {
@@ -30,6 +30,11 @@ function minSubArraySum(nums) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {

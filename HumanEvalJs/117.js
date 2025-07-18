@@ -13,6 +13,7 @@
  * selectWords("Uncle sam", 3) ==> ["Uncle"]
  */
 function selectWords(s, n) {
+//// BEGIN - CANONICAL SOLUTION
     const result = [];
     if (!s) return result;
     const vowels = new Set(['a', 'e', 'i', 'o', 'u']);
@@ -32,6 +33,11 @@ function selectWords(s, n) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {

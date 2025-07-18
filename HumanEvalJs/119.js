@@ -10,10 +10,10 @@
  * Return 'Yes' if there's a way to make a good string, and return 'No' otherwise.
  *
  * Examples:
- * match_parens(['()(', ')']) == 'Yes'
- * match_parens([')', ')']) == 'No'
+ * matchParens(['()(', ')']) == 'Yes'
+ * matchParens([')', ')']) == 'No'
  */
-function match_parens(lst) {
+function matchParens(lst) {
 //// BEGIN - CANONICAL SOLUTION
     function check(s) {
         let val = 0;
@@ -35,6 +35,11 @@ function match_parens(lst) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {
@@ -56,4 +61,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(match_parens);
+check(matchParens);

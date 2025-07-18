@@ -9,15 +9,15 @@
  * You may assume that the given string contains English letters only.
  *
  * Example:
- * get_closest_vowel("yogurt") ==> "u"
- * get_closest_vowel("FULL") ==> "U"
- * get_closest_vowel("quick") ==> ""
- * get_closest_vowel("ab") ==> ""
+ * getClosestVowel("yogurt") ==> "u"
+ * getClosestVowel("FULL") ==> "U"
+ * getClosestVowel("quick") ==> ""
+ * getClosestVowel("ab") ==> ""
  *
  * @param {string} word
  * @returns {string}
  */
-function get_closest_vowel(word) {
+function getClosestVowel(word) {
 //// BEGIN - CANONICAL SOLUTION
     if (word.length < 3) {
         return "";
@@ -36,24 +36,31 @@ function get_closest_vowel(word) {
     return "";
 }
 
-const assert = require('assert');
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
-    assert(candidate("yogurt") === "u");
-    assert(candidate("full") === "u");
-    assert(candidate("easy") === "");
-    assert(candidate("eAsy") === "");
-    assert(candidate("ali") === "");
-    assert(candidate("bad") === "a");
-    assert(candidate("most") === "o");
-    assert(candidate("ab") === "");
-    assert(candidate("ba") === "");
-    assert(candidate("quick") === "");
-    assert(candidate("anime") === "i");
-    assert(candidate("Asia") === "");
-    assert(candidate("Above") === "o");
+    assert.strictEqual(candidate("yogurt"), "u");
+    assert.strictEqual(candidate("full"), "u");
+    assert.strictEqual(candidate("easy"), "");
+    assert.strictEqual(candidate("eAsy"), "");
+    assert.strictEqual(candidate("ali"), "");
+    assert.strictEqual(candidate("bad"), "a");
+    assert.strictEqual(candidate("most"), "o");
+    assert.strictEqual(candidate("ab"), "");
+    assert.strictEqual(candidate("ba"), "");
+    assert.strictEqual(candidate("quick"), "");
+    assert.strictEqual(candidate("anime"), "i");
+    assert.strictEqual(candidate("Asia"), "");
+    assert.strictEqual(candidate("Above"), "o");
     // Check some edge cases that are easy to work out by hand.
-    assert(true);
+    assert.strictEqual(true, true);
 }
+
 //// BEGIN - CHECK
-check(get_closest_vowel);
+check(getClosestVowel);

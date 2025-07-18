@@ -5,11 +5,10 @@
  * For similar number of ones, sort based on decimal value.
  *
  * It must be implemented like this:
- * sort_array([1, 5, 2, 3, 4]) == [1, 2, 3, 4, 5]
- * sort_array([-2, -3, -4, -5, -6]) == [-6, -5, -4, -3, -2]
- * sort_array([1, 0, 2, 3, 4]) == [0, 1, 2, 3, 4]
+ * sortArray([1, 5, 2, 3, 4]) == [1, 2, 3, 4, 5]
+ * sortArray([-2, -3, -4, -5, -6]) == [-6, -5, -4, -3, -2]
+ * sortArray([1, 0, 2, 3, 4]) == [0, 1, 2, 3, 4]
  */
-//// BEGIN - CANONICAL SOLUTION
 function countOnes(x) {
     return x.toString(2).split('').filter(c => c === '1').length;
 }
@@ -18,7 +17,8 @@ function countOnes(x) {
  * @param {number[]} arr
  * @returns {number[]}
  */
-function sort_array(arr) {
+function sortArray(arr) {
+//// BEGIN - CANONICAL SOLUTION
     return arr
         .slice()
         .sort((a, b) => a - b)
@@ -26,8 +26,14 @@ function sort_array(arr) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
-    const assert = require('assert');
     // Check some simple cases
     assert.strictEqual(true, true, "This prints if this assert fails 1 (good for debugging!)");
     assert.deepStrictEqual(candidate([1,5,2,3,4]), [1, 2, 4, 3, 5]);
@@ -44,4 +50,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(sort_array)
+check(sortArray)

@@ -37,6 +37,11 @@ function histogram(test) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 /**
